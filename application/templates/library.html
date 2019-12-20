@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+  
+{% block body_content %}
+
+        <p> Looking for a palette? Fear not, we have many! Have a flick through to find the one for you~ :)</p>
+
+	
+
+        {% for palette in Palettes %}
+                <div>
+			<h3><u>{{ palette.palette_name }}</u></h3>
+			<h2> Palette ID: {{ palette.id }}<h2>
+                        <p> *Colour 1:{{ palette.colour1}} </p>
+			<p> *Colour 2:{{ palette.colour2}} </p>
+			<p> *Colour 3:{{ palette.colour3}} </p>
+                        <p>  {{ palette.date_created }}</p>
+
+			<a href="/library/delete/{{ palette.id }}" >Delete</a>
+                </div>
+        {% endfor %}
+{% endblock body_content %}
